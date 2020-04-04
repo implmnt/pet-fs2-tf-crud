@@ -7,19 +7,8 @@ pipeline {
   }
   stages {
     stage('build') {
-      parallel {
-        stage('build') {
-          steps {
-            sh 'sbt compile test'
-          }
-        }
-
-        stage('whoami') {
-          steps {
-            sh 'whoami'
-          }
-        }
-
+      steps {
+        sh 'sbt compile test'
       }
     }
 
